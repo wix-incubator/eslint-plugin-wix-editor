@@ -13,29 +13,21 @@ cast to boolean, and therefore can be replaced with `RegExp.prototype.test`.
 The following patterns are considered problems:
 
 ```js
-if (name.match(/[adhnsy]+/i)) {
+if ('some name'.match(/[adhnsy]+/i)) {
   // ...
 }
 
-function isGood(str, regexp) {
-  return str.match(regexp) ? 'Yes!' : 'No :['
-}
-
-var doesMatch = Boolean("".match(/a/))
+var doesMatch = Boolean(''.match(/a/))
 ```
 
 The following patterns are not considered problems:
 
 ```js
-if (/[adhnsy]+/i.test(name)) {
+if (/[adhnsy]+/i.test('some name')) {
   // ...
 }
 
-function isGood(str, regexp) {
-  return regexp.test(str) ? 'Yes!' : 'No :['
-}
-
-var doesMatch = /a/.test("")
+var doesMatch = /a/.test('')
 ```
 
 <!-- ## Related -->
