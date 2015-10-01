@@ -79,6 +79,8 @@ eslint-plugin-wix-editor is licensed under the MIT License.
 
 
 <!-- link labels -->
+
+
 [npm-url]: https://npmjs.org/package/eslint-plugin-wix-editor
 [npm-image]: http://img.shields.io/npm/v/eslint-plugin-wix-editor.svg
 
