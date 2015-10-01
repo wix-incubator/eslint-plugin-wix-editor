@@ -8,7 +8,7 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 ### Changed
 - (none)
 
-[unreleased]: https://github.com/username/reponame/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.0...HEAD
 
 <!--
 ## [6.6.6] - 2066-06-16
@@ -19,7 +19,7 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 ### Fixed
 ### Security
 
-[6.6.6]: https://github.com/username/reponame/compare/v6.6.5...v6.6.6
+[6.6.6]: https://github.com/wix/eslint-plugin-wix-editor/compare/v6.6.5...v6.6.6
 -->
 
 ## 1.0.0 - 2015-10-01
