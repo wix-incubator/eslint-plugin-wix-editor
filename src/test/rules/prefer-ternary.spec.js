@@ -12,8 +12,8 @@ function message(v) {
 
 ruleTester.run('prefer-ternary', rule, {
   valid: [
-        {code: 'if (b) { x = 3 } else { y = 4 }'},
-        {code: 'if (b) { x = 3 } else {}'}
+    'if (b) { x = 3 } else { y = 4 }',
+    'if (b) { x = 3 } else {}'
   ],
   invalid: [
         {code: 'if (b) y = 1; else y = 2', errors: errorsObject(message('y'))},

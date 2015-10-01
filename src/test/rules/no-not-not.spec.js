@@ -10,9 +10,9 @@ var castToBoolean = 'Cast to boolean with `Boolean()`'
 
 ruleTester.run('no-not-not', rule, {
   valid: [
-        {code: '!x'},
-        {code: '!~!x'},
-        {code: '"!x"'}
+    '!x',
+    '!~!x',
+    '"!x"'
   ],
   invalid: [
         {code: '!!x', errors: errorsObject(castToBoolean)},

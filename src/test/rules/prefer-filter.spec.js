@@ -10,9 +10,9 @@ var useFilter = 'Use Array.filter instead of filtering inside the forEach'
 
 ruleTester.run('prefer-filter', rule, {
   valid: [
-        {code: '[].forEach(function(){x=2;if(b){}})'},
-        {code: '[].forEach(function(){if(b){};x=2})'},
-        {code: '[].map(function(){if(b){}})'}
+    '[].forEach(function(){x=2;if(b){}})',
+    '[].forEach(function(){if(b){};x=2})',
+    '[].map(function(){if(b){}})'
   ],
   invalid: [
         {code: '[].forEach(function(){if(b){}})', errors: errorsObject(useFilter)},

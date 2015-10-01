@@ -10,9 +10,9 @@ var useTest = 'Define function outside boolean expression'
 
 ruleTester.run('no-condition-callback', rule, {
   valid: [
-        {code: 'if (func()) {}'},
-        {code: 'function func() {}'},
-        {code: 'if (x) { (function f() {}).call(null)}'}
+    'if (func()) {}',
+    'function func() {}',
+    'if (x) { (function f() {}).call(null)}'
   ],
   invalid: [
         {code: 'if    (f(function () {})) {}', errors: errorsObject(useTest)},

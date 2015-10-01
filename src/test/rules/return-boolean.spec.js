@@ -13,8 +13,8 @@ var falseFalse = 'this could be simplified to "return false"'
 
 ruleTester.run('return-boolean', rule, {
   valid: [
-        {code: 'function f() { if (b) { return true } }'},
-        {code: 'function f() { if (b) return !!false; else return false }'}
+    'function f() { if (b) { return true } }',
+    'function f() { if (b) return !!false; else return false }'
   ],
   invalid: [
         {code: 'function f() { if (b) return true; else return false }', errors: errorsObject(trueFalse)},

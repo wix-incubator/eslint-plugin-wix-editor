@@ -11,12 +11,12 @@ function prefer(code) {
 }
 ruleTester.run('augmented-assignment', rule, {
   valid: [
-        {code: 'x = 1 + x'}, // wrong order
-        {code: 'x = x + y + w'}, // should be cought, but too complicated given all the permutations:
-        {code: 'x = x * y + w'},
-        {code: 'a = b + 1'},
-        {code: 'a.a.b = a.b.b + 1'},
-        {code: 'a.a.b = a.b.b + 1'}
+    'x = 1 + x', // wrong order
+    'x = x + y + w', // should be cought, but too complicated given all the permutations:
+    'x = x * y + w',
+    'a = b + 1',
+    'a.a.b = a.b.b + 1',
+    'a.a.b = a.b.b + 1'
   ],
   invalid: [
         {code: 'x = x + 2', errors: prefer('x += 2')},

@@ -10,8 +10,8 @@ var useTest = 'Use `Regex.test() instead`'
 
 ruleTester.run('no-unneeded-match', rule, {
   valid: [
-        {code: '"".match(/a/)'},
-        {code: 'var m = "".match(/a/)'}
+    '"".match(/a/)',
+    'var m = "".match(/a/)'
   ],
   invalid: [
         {code: 'if ("".match(/a/)) {}', errors: errorsObject(useTest)},
