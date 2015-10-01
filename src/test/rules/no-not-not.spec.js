@@ -15,11 +15,11 @@ ruleTester.run('no-not-not', rule, {
     '"!x"'
   ],
   invalid: [
-        {code: '!!x', errors: errorsObject(castToBoolean)},
-        {code: '!(!(x))', errors: errorsObject(castToBoolean)},
-        {code: '!!func()', errors: errorsObject(castToBoolean)},
-        {code: '!!arr.filter(function(){})', errors: errorsObject(castToBoolean)},
-        {code: '!!!x', errors: errorsObject(castToBoolean)},
-        {code: '!!!!x', errors: errorsObject(castToBoolean)}
+    {code: '!!x', errors: errorsObject(castToBoolean)},
+    {code: '!(!(x))', errors: errorsObject(castToBoolean)},
+    {code: '!!func()', errors: errorsObject(castToBoolean)},
+    {code: '!!arr.filter(function(){})', errors: errorsObject(castToBoolean)},
+    {code: '!!!x', errors: errorsObject(castToBoolean)},
+    {code: '!!!!x', errors: errorsObject(castToBoolean)}
   ]
 })

@@ -15,9 +15,9 @@ ruleTester.run('prefer-filter', rule, {
     '[].map(function(){if(b){}})'
   ],
   invalid: [
-        {code: '[].forEach(function(){if(b){}})', errors: errorsObject(useFilter)},
-        {code: '[].forEach(function(){if(b){;;;;;}})', errors: errorsObject(useFilter)},
-        {code: '[].forEach(function(){if(!b){}})', errors: errorsObject(useFilter)},
-        {code: '[].forEach(function(){if(b) a = 4;})', errors: errorsObject(useFilter)}
+    {code: '[].forEach(function(){if(b){}})', errors: errorsObject(useFilter)},
+    {code: '[].forEach(function(){if(b){;;;;;}})', errors: errorsObject(useFilter)},
+    {code: '[].forEach(function(){if(!b){}})', errors: errorsObject(useFilter)},
+    {code: '[].forEach(function(){if(b) a = 4;})', errors: errorsObject(useFilter)}
   ]
 })

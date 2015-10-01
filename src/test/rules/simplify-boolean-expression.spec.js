@@ -15,19 +15,19 @@ ruleTester.run('no-condition-callback', rule, {
     'if (x) { (function f() {}).call(null)}'
   ],
   invalid: [
-        {code: 'if    (f(function () {})) {}', errors: errorsObject(useTest)},
-        {code: 'while (f(function () {})) {}', errors: errorsObject(useTest)},
-        {code: 'for   (;f(function () {});) {}', errors: errorsObject(useTest)},
+    {code: 'if    (f(function () {})) {}', errors: errorsObject(useTest)},
+    {code: 'while (f(function () {})) {}', errors: errorsObject(useTest)},
+    {code: 'for   (;f(function () {});) {}', errors: errorsObject(useTest)},
 
-        {code: 'if    (function f() {}()) {}', errors: errorsObject(useTest)},
-        {code: 'if    (function f() {}) {}', errors: errorsObject(useTest)},
+    {code: 'if    (function f() {}()) {}', errors: errorsObject(useTest)},
+    {code: 'if    (function f() {}) {}', errors: errorsObject(useTest)},
 
-        {code: 'while (x && f(function () {})) {}', errors: errorsObject(useTest)},
-        {code: 'while (function () {}.apply(null)) {}', errors: errorsObject(useTest)},
-        {code: 'for (; (function () {}.call(null) || x) && y;) {}', errors: errorsObject(useTest)},
+    {code: 'while (x && f(function () {})) {}', errors: errorsObject(useTest)},
+    {code: 'while (function () {}.apply(null)) {}', errors: errorsObject(useTest)},
+    {code: 'for (; (function () {}.call(null) || x) && y;) {}', errors: errorsObject(useTest)},
 
-        {code: '!((f(function () {})))', errors: errorsObject(useTest)},
-        {code: '!!((f(function () {})))', errors: errorsObject(useTest)},
-        {code: 'Boolean(f(function () {}))', errors: errorsObject(useTest)}
+    {code: '!((f(function () {})))', errors: errorsObject(useTest)},
+    {code: '!!((f(function () {})))', errors: errorsObject(useTest)},
+    {code: 'Boolean(f(function () {}))', errors: errorsObject(useTest)}
   ]
 })

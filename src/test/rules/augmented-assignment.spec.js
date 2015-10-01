@@ -19,19 +19,19 @@ ruleTester.run('augmented-assignment', rule, {
     'a.a.b = a.b.b + 1'
   ],
   invalid: [
-        {code: 'x = x + 2', errors: prefer('x += 2')},
-        {code: 'x = x - 2', errors: prefer('x -= 2')},
-        {code: 'x = x * 2', errors: prefer('x *= 2')},
-        {code: 'x = x / 2', errors: prefer('x /= 2')},
-        {code: 'x = x % 2', errors: prefer('x %= 2')},
-        {code: 'x = x << 2', errors: prefer('x <<= 2')},
-        {code: 'x = x >> 2', errors: prefer('x >>= 2')},
-        {code: 'x = x & 2', errors: prefer('x &= 2')},
-        {code: 'x = x ^ 2', errors: prefer('x ^= 2')},
-        {code: 'x = x | 2', errors: prefer('x |= 2')},
+    {code: 'x = x + 2', errors: prefer('x += 2')},
+    {code: 'x = x - 2', errors: prefer('x -= 2')},
+    {code: 'x = x * 2', errors: prefer('x *= 2')},
+    {code: 'x = x / 2', errors: prefer('x /= 2')},
+    {code: 'x = x % 2', errors: prefer('x %= 2')},
+    {code: 'x = x << 2', errors: prefer('x <<= 2')},
+    {code: 'x = x >> 2', errors: prefer('x >>= 2')},
+    {code: 'x = x & 2', errors: prefer('x &= 2')},
+    {code: 'x = x ^ 2', errors: prefer('x ^= 2')},
+    {code: 'x = x | 2', errors: prefer('x |= 2')},
 
-        {code: 'x = x + y', errors: prefer('x += y')},
-        {code: 'x = x * (y + w)', errors: prefer('x *= y + w')},
-        {code: 'a.b.c = a.b.c + 3', errors: prefer('a.b.c += 3')}
+    {code: 'x = x + y', errors: prefer('x += y')},
+    {code: 'x = x * (y + w)', errors: prefer('x *= y + w')},
+    {code: 'a.b.c = a.b.c + 3', errors: prefer('a.b.c += 3')}
   ]
 })

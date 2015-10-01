@@ -17,12 +17,12 @@ ruleTester.run('return-boolean', rule, {
     'function f() { if (b) return !!false; else return false }'
   ],
   invalid: [
-        {code: 'function f() { if (b) return true; else return false }', errors: errorsObject(trueFalse)},
-        {code: 'function f() { if (b) return true; else return false; }', errors: errorsObject(trueFalse)},
-        {code: 'function f() { if (b) {return true} else {return false} }', errors: errorsObject(trueFalse)},
-        {code: 'function f() { if (b) return false; else return true }', errors: errorsObject(falseTrue)},
-        {code: 'function f() { if (b) {return false} else {return true} }', errors: errorsObject(falseTrue)},
-        {code: 'function f() { if (b) return true; else return true; }', errors: errorsObject(trueTrue)},
-        {code: 'function f() { if (b) return false; else return false }', errors: errorsObject(falseFalse)}
+    {code: 'function f() { if (b) return true; else return false }', errors: errorsObject(trueFalse)},
+    {code: 'function f() { if (b) return true; else return false; }', errors: errorsObject(trueFalse)},
+    {code: 'function f() { if (b) {return true} else {return false} }', errors: errorsObject(trueFalse)},
+    {code: 'function f() { if (b) return false; else return true }', errors: errorsObject(falseTrue)},
+    {code: 'function f() { if (b) {return false} else {return true} }', errors: errorsObject(falseTrue)},
+    {code: 'function f() { if (b) return true; else return true; }', errors: errorsObject(trueTrue)},
+    {code: 'function f() { if (b) return false; else return false }', errors: errorsObject(falseFalse)}
   ]
 })
