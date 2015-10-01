@@ -43,5 +43,9 @@ describe('all rule files should be exported, configured, and documented:', funct
     it('should have a markdown file for rule ' + ruleName, function() {
       assert.equal(fs.existsSync(path.join('./docs', ruleName + '.md')), true)
     })
+
+    it('should have a test file for rule ' + ruleName, function() {
+      assert.equal(fs.existsSync(path.join('./src/test/rules/', ruleName + '.spec.js')), true)
+    })
   })
 })
