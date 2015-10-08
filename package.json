@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-wix-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wix's editor group's custom ESLint rules",
   "main": "index.js",
   "scripts": {

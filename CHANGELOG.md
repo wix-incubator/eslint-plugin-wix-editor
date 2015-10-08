@@ -8,19 +8,25 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 ### Changed
 - (none)
 
-[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.1...HEAD
 
-<!--
-## [6.6.6] - 2066-06-16
+## [1.0.1] - 2015-10-08
 ### Added
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
+- Test to check that all rules are tested [`da0ceae`][da0ceae]
 
-[6.6.6]: https://github.com/wix/eslint-plugin-wix-editor/compare/v6.6.5...v6.6.6
--->
+### Changed
+- Travis configuration [`da6b399`][da6b399]
+- .eslintrc format [`da67b5b`][da67b5b]
+
+### Fixed
+- Minor docs fixes
+
+[da6b399]: https://github.com/wix/eslint-plugin-wix-editor/commit/da0ceae983c2d63182436534a8be68f2315825d5
+[da0ceae]: https://github.com/wix/eslint-plugin-wix-editor/commit/da6b399d6fe796d7aa15e040195527eaee92de84
+[da67b5b]: https://github.com/wix/eslint-plugin-wix-editor/commit/da67b5be499c18231d58e6b5d8dfb625e6d68c90
+
+[1.0.1]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.0...v1.0.1
+
 
 ## 1.0.0 - 2015-10-01
 ### Added
@@ -41,3 +47,13 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 [prefer-ternary]: docs/prefer-ternary.md
 [return-boolean]: docs/return-boolean.md
 [simplify-boolean-expression]: docs/simplify-boolean-expression.md
+
+
+<!--
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+ -->
