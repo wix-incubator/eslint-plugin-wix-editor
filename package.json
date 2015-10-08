@@ -27,8 +27,8 @@
     "type": "git",
     "url": "https://github.com/wix/eslint-plugin-wix-editor"
   },
-  "homepage": "https://github.com/yannickcr/eslint-plugin-wix-editor",
-  "bugs": "https://github.com/yannickcr/eslint-plugin-wix-editor/issues",
+  "homepage": "https://github.com/wix/eslint-plugin-wix-editor",
+  "bugs": "https://github.com/wix/eslint-plugin-wix-editor/issues",
   "keywords": [
     "wix",
     "eslint",
