@@ -5,8 +5,8 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 
 
 ## [Unreleased][unreleased]
-### Changed
-- (none)
+### Added
+- Rule [no-instanceof-array][no-instanceof-array]
 
 [unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.1...HEAD
 
@@ -47,6 +47,7 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 [prefer-ternary]: docs/prefer-ternary.md
 [return-boolean]: docs/return-boolean.md
 [simplify-boolean-expression]: docs/simplify-boolean-expression.md
+[no-instanceof-array]: docs/no-instanceof-array.md
 
 
 <!--

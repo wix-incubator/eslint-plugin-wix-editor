@@ -12,7 +12,8 @@ module.exports = {
   'prefer-filter',
   'prefer-ternary',
   'return-boolean',
-  'simplify-boolean-expression'
+  'simplify-boolean-expression',
+  'no-instanceof-array'
 ].forEach(function(name) {
   module.exports.rules[name] = require('./src/main/rules/' + name + '.js')
   module.exports.rulesConfig[name] = 0

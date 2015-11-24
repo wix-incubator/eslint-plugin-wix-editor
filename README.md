@@ -32,6 +32,7 @@ Finally, enable all of the rules that you would like to use:
 {
   "rules": {
     "wix-editor/augmented-assignment": 2,
+    "wix-editor/no-instanceof-array": 2,
     "wix-editor/no-not-not": 2,
     "wix-editor/no-unneeded-match": 2,
     "wix-editor/prefer-filter": 2,
@@ -46,6 +47,7 @@ Finally, enable all of the rules that you would like to use:
 # Rules
 
 * [augmented-assignment](docs/augmented-assignment.md): Prevent code duplication that could be simplified to augmented assignment.
+* [no-instanceof-array](docs/no-instanceof-array.md): Prevent use of function definition inside boolean expression.
 * [no-not-not](docs/no-not-not.md): Prevent casting to boolean with `!!`
 * [no-unneeded-match](docs/no-unneeded-match.md): Prevent using `str.match(rgx)` as a boolean value.
 * [prefer-filter](docs/prefer-filter.md): Prevent `forEach` statements that only include an `if` statement.
