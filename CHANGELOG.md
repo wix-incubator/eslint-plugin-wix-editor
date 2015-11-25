@@ -6,9 +6,18 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 
 ## [Unreleased][unreleased]
 ### Added
-- Rule [no-instanceof-array][no-instanceof-array]
+- (none)
 
-[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.1...HEAD
+[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.1.0...HEAD
+
+## [1.1.0] - 2015-10-25
+### Added
+- Rule [no-instanceof-array][no-instanceof-array] [`efcaafb`][efcaafb]
+
+[efcaafb]: https://github.com/wix/eslint-plugin-wix-editor/commit/efcaafb8ba53c93af51a3d39df9b530e9061557a
+
+[1.1.0]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.0.1...v1.1.0
+
 
 ## [1.0.1] - 2015-10-08
 ### Added
