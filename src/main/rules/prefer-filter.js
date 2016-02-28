@@ -15,7 +15,8 @@ module.exports = function(context) {
             node.body.body &&
             node.body.body.length === 1 &&
             node.body.body[0] &&
-            node.body.body[0].type === 'IfStatement'
+            node.body.body[0].type === 'IfStatement' &&
+            !node.body.body[0].alternate
   }
 
   return {
