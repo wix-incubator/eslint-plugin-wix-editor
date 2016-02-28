@@ -8,7 +8,15 @@ This change log adheres to standards from [Keep a CHANGELOG](http://keepachangel
 ### Added
 - (none)
 
-[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.1.1...HEAD
+
+## [1.1.1] - 2016-02-28
+### Fixed
+- [prefer-filter][prefer-filter] mistakingly caught usages of `if-else` which can not be replaced by `filter` [`da5d52f`][da5d52f]
+
+[da5d52f]: https://github.com/wix/eslint-plugin-wix-editor/commit/da5d52f03056ccd7b1069d3b02329ec0d6509694
+
+[1.1.1]: https://github.com/wix/eslint-plugin-wix-editor/compare/v1.1.0...v1.1.1
 
 ## [1.1.0] - 2015-10-25
 ### Added
