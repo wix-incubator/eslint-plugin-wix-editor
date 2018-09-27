@@ -1,6 +1,10 @@
 ---
   extends: "standard"
   rules:
+    object-curly-spacing:
+      - 2
+      - "never"
     space-before-function-paren:
       - 2
       - "never"
+    "node/no-deprecated-api": 0

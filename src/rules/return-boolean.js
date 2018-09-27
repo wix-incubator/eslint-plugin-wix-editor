@@ -19,17 +19,17 @@ module.exports = function(context) {
         if (isBodyReturningBoolean(consequent) && isBodyReturningBoolean(alternate)) {
           if (consequent.argument.value === alternate.argument.value) {
             context.report(
-                          node,
-                          'this could be simplified to "return {{bool}}"',
-                          {bool: context.getSource(alternate.argument)}
-                        )
+              node,
+              'this could be simplified to "return {{bool}}"',
+              {bool: context.getSource(alternate.argument)}
+            )
           } else {
             var boolPrefix = alternate.argument.value ? '!' : ''
             context.report(
-                          node,
-                          'this could be simplified to "return ' + boolPrefix + 'Boolean({{test}})"',
-                          {test: context.getSource(node.test)}
-                        )
+              node,
+              'this could be simplified to "return ' + boolPrefix + 'Boolean({{test}})"',
+              {test: context.getSource(node.test)}
+            )
           }
         }
       } catch (e) {

@@ -21,15 +21,15 @@ module.exports = function(context) {
         var alternate = getIfBody(node.alternate)
 
         if (
-                    isBodyExpressionWithAssignment(consequent) &&
+          isBodyExpressionWithAssignment(consequent) &&
                     isBodyExpressionWithAssignment(alternate) &&
                     areEqual(consequent.expression.left, alternate.expression.left)
-                  ) {
+        ) {
           context.report(
-                        node,
-                        'use ternary instead of if-else for assignment of {{left}}',
-                        {left: context.getSource(alternate.expression.left)}
-                    )
+            node,
+            'use ternary instead of if-else for assignment of {{left}}',
+            {left: context.getSource(alternate.expression.left)}
+          )
         }
       } catch (e) {
         /* istanbul ignore next */

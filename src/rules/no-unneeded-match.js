@@ -46,13 +46,13 @@ module.exports = function(context) {
     CallExpression: function(node) {
       try {
         reportOn(node,
-                    node.callee &&
+          node.callee &&
                     node.callee.type === 'Identifier' &&
                     node.callee.name === 'Boolean' &&
                     node.arguments &&
                     node.arguments.length &&
                     isNodeMatchCall(node.arguments[0])
-                )
+        )
       } catch (e) {
         /* istanbul ignore next */
         context.report(node, e.toString() + ' ' + e.stack)

@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../main/rules/augmented-assignment')
+var rule = require('../../src/rules/augmented-assignment')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester()

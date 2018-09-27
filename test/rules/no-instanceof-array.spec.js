@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../main/rules/no-instanceof-array')
+var rule = require('../../src/rules/no-instanceof-array')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester()

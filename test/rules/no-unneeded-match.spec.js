@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../main/rules/no-unneeded-match')
+var rule = require('../../src/rules/no-unneeded-match')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester()

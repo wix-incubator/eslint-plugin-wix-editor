@@ -1,12 +1,12 @@
 /* eslint-env mocha */
 'use strict'
 
-var plugin = require('../..')
+var plugin = require('../src')
 var assert = require('assert')
 var fs = require('fs')
 var path = require('path')
 
-var rulesDir = '../main/rules'
+var rulesDir = '../src/rules'
 
 function count(sub, str) {
   return (str.match(new RegExp(sub, 'g')) || []).length
@@ -45,7 +45,7 @@ describe('all rule files should be exported, configured, and documented:', funct
     })
 
     it('should have a test file for rule ' + ruleName, function() {
-      assert.equal(fs.existsSync(path.join('./src/test/rules/', ruleName + '.spec.js')), true)
+      assert.equal(fs.existsSync(path.join('./test/rules/', ruleName + '.spec.js')), true)
     })
   })
 })

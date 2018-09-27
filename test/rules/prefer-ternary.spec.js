@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../main/rules/prefer-ternary')
+var rule = require('../../src/rules/prefer-ternary')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester()

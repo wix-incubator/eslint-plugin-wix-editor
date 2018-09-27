@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../main/rules/simplify-boolean-expression')
+var rule = require('../../src/rules/simplify-boolean-expression')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester()

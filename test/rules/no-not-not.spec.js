@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../main/rules/no-not-not')
+var rule = require('../../src/rules/no-not-not')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester()

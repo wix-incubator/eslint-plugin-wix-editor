@@ -11,7 +11,7 @@ module.exports = function(context) {
     AssignmentExpression: function(node) {
       try {
         if (
-                  node.operator === '=' &&
+          node.operator === '=' &&
                   node.left &&
                   node.right &&
                   node.right.type === 'BinaryExpression' &&
@@ -19,16 +19,16 @@ module.exports = function(context) {
                   node.right.left &&
                   node.right.right &&
                   context.getSource(node.left) === context.getSource(node.right.left)
-                ) {
+        ) {
           context.report(
-                      node,
-                      'Prefer using augmented-assignment: {{left}} {{operator}}= {{right}}',
+            node,
+            'Prefer using augmented-assignment: {{left}} {{operator}}= {{right}}',
             {
               left: context.getSource(node.left),
               operator: node.right.operator,
               right: context.getSource(node.right.right)
             }
-                    )
+          )
         }
       } catch (e) {
         /* istanbul ignore next */

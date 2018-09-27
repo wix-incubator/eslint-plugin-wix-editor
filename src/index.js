@@ -15,6 +15,6 @@ module.exports = {
   'simplify-boolean-expression',
   'no-instanceof-array'
 ].forEach(function(name) {
-  module.exports.rules[name] = require('./src/main/rules/' + name + '.js')
+  module.exports.rules[name] = require('./rules/' + name + '.js')
   module.exports.rulesConfig[name] = 0
 })

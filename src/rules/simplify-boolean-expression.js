@@ -13,15 +13,15 @@ module.exports = function(context) {
     return node.type === 'CallExpression' && node.callee && node.callee.type === 'Identifier' && node.callee.name === 'Boolean'
   }
 
-    // recursion:
-    // function isContainedInCondition(node) {
-    //     if (node.type === 'Program') {
-    //         return false;
-    //     }
-    //     return isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node) || isContainedInCondition(node.parent);
-    // }
+  // recursion:
+  // function isContainedInCondition(node) {
+  //     if (node.type === 'Program') {
+  //         return false;
+  //     }
+  //     return isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node) || isContainedInCondition(node.parent);
+  // }
 
-    // not-recursion:
+  // not-recursion:
   function isContainedInCondition(node) {
     while (node) {
       if (isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node)) {
