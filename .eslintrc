@@ -8,3 +8,5 @@
       - 2
       - "never"
     "node/no-deprecated-api": 0
+    no-var: error
+    prefer-const: error

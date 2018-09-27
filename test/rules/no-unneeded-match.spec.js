@@ -1,12 +1,12 @@
 'use strict'
 
-var rule = require('../../src/rules/no-unneeded-match')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/no-unneeded-match')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
-var useTest = 'Use `Regex.test() instead`'
+const useTest = 'Use `Regex.test() instead`'
 
 ruleTester.run('no-unneeded-match', rule, {
   valid: [

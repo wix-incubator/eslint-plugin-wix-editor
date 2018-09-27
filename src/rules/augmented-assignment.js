@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function(context) {
-  var qualifiedOperators = ['+', '-', '*', '/', '%', '<<', '>>', '&', '^', '|']
+  const qualifiedOperators = ['+', '-', '*', '/', '%', '<<', '>>', '&', '^', '|']
 
   function isQualifiedOperator(op) {
     return qualifiedOperators.indexOf(op) !== -1

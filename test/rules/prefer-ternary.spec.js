@@ -1,10 +1,10 @@
 'use strict'
 
-var rule = require('../../src/rules/prefer-ternary')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/prefer-ternary')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
 function message(v) {
   return 'use ternary instead of if-else for assignment of ' + v

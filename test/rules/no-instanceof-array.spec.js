@@ -1,10 +1,10 @@
 'use strict'
 
-var rule = require('../../src/rules/no-instanceof-array')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/no-instanceof-array')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
 ruleTester.run('no-instanceof-array', rule, {
   valid: [
@@ -13,6 +13,6 @@ ruleTester.run('no-instanceof-array', rule, {
   ],
   invalid: [{
     code: 'a instanceof Array',
-    errors: errorsObject('Use `Array.isArray(a)` instead of `a instanceof Array`')
+    errors: errorsObject("Use 'Array.isArray(a)' instead of 'a instanceof Array'")
   }]
 })

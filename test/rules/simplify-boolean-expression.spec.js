@@ -1,12 +1,12 @@
 'use strict'
 
-var rule = require('../../src/rules/simplify-boolean-expression')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/simplify-boolean-expression')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
-var useTest = 'Define function outside boolean expression'
+const useTest = 'Define function outside boolean expression'
 
 ruleTester.run('no-condition-callback', rule, {
   valid: [

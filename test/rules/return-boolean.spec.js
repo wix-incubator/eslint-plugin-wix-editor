@@ -1,15 +1,15 @@
 'use strict'
 
-var rule = require('../../src/rules/return-boolean')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/return-boolean')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
-var trueFalse = 'this could be simplified to "return Boolean(b)"'
-var falseTrue = 'this could be simplified to "return !Boolean(b)"'
-var trueTrue = 'this could be simplified to "return true"'
-var falseFalse = 'this could be simplified to "return false"'
+const trueFalse = 'this could be simplified to "return Boolean(b)"'
+const falseTrue = 'this could be simplified to "return !Boolean(b)"'
+const trueTrue = 'this could be simplified to "return true"'
+const falseFalse = 'this could be simplified to "return false"'
 
 ruleTester.run('return-boolean', rule, {
   valid: [

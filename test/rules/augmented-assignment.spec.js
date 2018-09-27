@@ -1,18 +1,18 @@
 'use strict'
 
-var rule = require('../../src/rules/augmented-assignment')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/augmented-assignment')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
 function prefer(code) {
-  return errorsObject('Prefer using augmented-assignment: ' + code)
+  return errorsObject(`Prefer using augmented-assignment: ${code}`)
 }
 ruleTester.run('augmented-assignment', rule, {
   valid: [
     'x = 1 + x', // wrong order
-    'x = x + y + w', // should be cought, but too complicated given all the permutations:
+    'x = x + y + w', // should be caught, but too complicated given all the permutations:
     'x = x * y + w',
     'a = b + 1',
     'a.a.b = a.b.b + 1',

@@ -1,12 +1,12 @@
 'use strict'
 
-var rule = require('../../src/rules/prefer-filter')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/prefer-filter')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
-var useFilter = 'Use Array.filter instead of filtering inside the forEach'
+const useFilter = 'Use Array.filter instead of filtering inside the forEach'
 
 ruleTester.run('prefer-filter', rule, {
   valid: [

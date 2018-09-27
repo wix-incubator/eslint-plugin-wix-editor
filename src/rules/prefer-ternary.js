@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function(context) {
-  var getIfBody = require('../util/getIfBody.js')
+  const getIfBody = require('../util/getIfBody.js')
 
   function areEqual(a, b) {
     return context.getSource(a) === context.getSource(b)
@@ -17,13 +17,13 @@ module.exports = function(context) {
   return {
     IfStatement: function(node) {
       try {
-        var consequent = getIfBody(node.consequent)
-        var alternate = getIfBody(node.alternate)
+        const consequent = getIfBody(node.consequent)
+        const alternate = getIfBody(node.alternate)
 
         if (
           isBodyExpressionWithAssignment(consequent) &&
-                    isBodyExpressionWithAssignment(alternate) &&
-                    areEqual(consequent.expression.left, alternate.expression.left)
+          isBodyExpressionWithAssignment(alternate) &&
+          areEqual(consequent.expression.left, alternate.expression.left)
         ) {
           context.report(
             node,

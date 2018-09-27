@@ -1,7 +1,7 @@
 'use strict'
 
 function getArguments(args) {
-  var result = {}
+  const result = {}
   args.forEach(function(arg) {
     if (arg.type === 'ArrayExpression') {
       result.requirements = arg

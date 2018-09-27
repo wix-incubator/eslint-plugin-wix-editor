@@ -1,12 +1,12 @@
 'use strict'
 
-var rule = require('../../src/rules/no-not-not')
-var RuleTester = require('eslint').RuleTester
+const rule = require('../../src/rules/no-not-not')
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester()
-var errorsObject = require('../util/errorsObject')
+const ruleTester = new RuleTester()
+const errorsObject = require('../util/errorsObject')
 
-var castToBoolean = 'Cast to boolean with `Boolean()`'
+const castToBoolean = 'Cast to boolean with `Boolean()`'
 
 ruleTester.run('no-not-not', rule, {
   valid: [

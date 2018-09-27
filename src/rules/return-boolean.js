@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function(context) {
-  var getIfBody = require('../util/getIfBody.js')
+  const getIfBody = require('../util/getIfBody.js')
 
   function isBodyReturningBoolean(body) {
     return body &&
@@ -13,8 +13,8 @@ module.exports = function(context) {
   return {
     IfStatement: function(node) {
       try {
-        var consequent = getIfBody(node.consequent)
-        var alternate = getIfBody(node.alternate)
+        const consequent = getIfBody(node.consequent)
+        const alternate = getIfBody(node.alternate)
 
         if (isBodyReturningBoolean(consequent) && isBodyReturningBoolean(alternate)) {
           if (consequent.argument.value === alternate.argument.value) {
@@ -24,10 +24,10 @@ module.exports = function(context) {
               {bool: context.getSource(alternate.argument)}
             )
           } else {
-            var boolPrefix = alternate.argument.value ? '!' : ''
+            const boolPrefix = alternate.argument.value ? '!' : ''
             context.report(
               node,
-              'this could be simplified to "return ' + boolPrefix + 'Boolean({{test}})"',
+              `this could be simplified to "return ${boolPrefix}Boolean({{test}})"`,
               {test: context.getSource(node.test)}
             )
           }
