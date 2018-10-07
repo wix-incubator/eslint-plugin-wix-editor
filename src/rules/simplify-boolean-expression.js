@@ -1,37 +1,37 @@
 'use strict'
 
-module.exports = function(context) {
-  function isConditionCheck(node) {
-    return node.parent && node.parent.test === node
-  }
+function isConditionCheck(node) {
+  return node.parent && node.parent.test === node
+}
 
-  function isNegationOperator(node) {
-    return node.type === 'UnaryExpression' && node.operator === '!'
-  }
+function isNegationOperator(node) {
+  return node.type === 'UnaryExpression' && node.operator === '!'
+}
 
-  function isBooleanConstructorCall(node) {
-    return node.type === 'CallExpression' && node.callee && node.callee.type === 'Identifier' && node.callee.name === 'Boolean'
-  }
+function isBooleanConstructorCall(node) {
+  return node.type === 'CallExpression' && node.callee && node.callee.type === 'Identifier' && node.callee.name === 'Boolean'
+}
 
-  // recursion:
-  // function isContainedInCondition(node) {
-  //     if (node.type === 'Program') {
-  //         return false;
-  //     }
-  //     return isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node) || isContainedInCondition(node.parent);
-  // }
+// recursion:
+// function isContainedInCondition(node) {
+//     if (node.type === 'Program') {
+//         return false;
+//     }
+//     return isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node) || isContainedInCondition(node.parent);
+// }
 
-  // not-recursion:
-  function isContainedInCondition(node) {
-    while (node) {
-      if (isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node)) {
-        return true
-      }
-      node = node.parent
+// not-recursion:
+function isContainedInCondition(node) {
+  while (node) {
+    if (isConditionCheck(node) || isNegationOperator(node) || isBooleanConstructorCall(node)) {
+      return true
     }
-    return false
+    node = node.parent
   }
+  return false
+}
 
+module.exports = function(context) {
   return {
     FunctionExpression: function(node) {
       try {

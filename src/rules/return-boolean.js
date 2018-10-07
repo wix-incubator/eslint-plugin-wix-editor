@@ -1,15 +1,14 @@
 'use strict'
+const getIfBody = require('../util/getIfBody.js')
+
+function isBodyReturningBoolean(body) {
+  return body &&
+             body.type === 'ReturnStatement' &&
+             body.argument &&
+             typeof body.argument.value === 'boolean'
+}
 
 module.exports = function(context) {
-  const getIfBody = require('../util/getIfBody.js')
-
-  function isBodyReturningBoolean(body) {
-    return body &&
-               body.type === 'ReturnStatement' &&
-               body.argument &&
-               typeof body.argument.value === 'boolean'
-  }
-
   return {
     IfStatement: function(node) {
       try {

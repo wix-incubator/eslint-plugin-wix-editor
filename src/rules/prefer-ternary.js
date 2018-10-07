@@ -1,17 +1,16 @@
 'use strict'
+const getIfBody = require('../util/getIfBody.js')
+
+function isBodyExpressionWithAssignment(body) {
+  return body &&
+             body.type === 'ExpressionStatement' &&
+             body.expression &&
+             body.expression.type === 'AssignmentExpression'
+}
 
 module.exports = function(context) {
-  const getIfBody = require('../util/getIfBody.js')
-
   function areEqual(a, b) {
     return context.getSource(a) === context.getSource(b)
-  }
-
-  function isBodyExpressionWithAssignment(body) {
-    return body &&
-               body.type === 'ExpressionStatement' &&
-               body.expression &&
-               body.expression.type === 'AssignmentExpression'
   }
 
   return {

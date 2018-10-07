@@ -1,10 +1,10 @@
 'use strict'
 
-module.exports = function(context) {
-  function isNot(node) {
-    return node.type === 'UnaryExpression' && node.operator === '!'
-  }
+function isNot(node) {
+  return node.type === 'UnaryExpression' && node.operator === '!'
+}
 
+module.exports = function(context) {
   return {
     UnaryExpression: function(node) {
       try {

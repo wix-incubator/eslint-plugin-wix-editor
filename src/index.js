@@ -6,7 +6,6 @@ module.exports = {
 }
 
 ;[
-  'augmented-assignment',
   'no-not-not',
   'no-unneeded-match',
   'prefer-filter',
@@ -15,6 +14,6 @@ module.exports = {
   'simplify-boolean-expression',
   'no-instanceof-array'
 ].forEach(function(name) {
-  module.exports.rules[name] = require('./rules/' + name + '.js')
+  module.exports.rules[name] = require(`./rules/${name}.js`)
   module.exports.rulesConfig[name] = 0
 })

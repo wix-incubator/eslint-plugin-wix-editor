@@ -7,10 +7,7 @@ function isEmptyNode(node) {
   if (node.type === 'BlockStatement' && node.body.every(isEmptyNode)) {
     return true
   }
-  if (node.type === 'EmptyStatement') {
-    return true
-  }
-  return false
+  return node.type === 'EmptyStatement'
 }
 
 module.exports = isEmptyNode
