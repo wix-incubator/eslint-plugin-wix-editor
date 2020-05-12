@@ -3,7 +3,7 @@
 module.exports = function(context) {
   function reportOn(node, bool) {
     if (bool) {
-      context.report(node, 'Use `Regex.test() instead`')
+      context.report({node: node, message: 'Use `Regex.test() instead`'})
     }
   }
 
@@ -26,7 +26,7 @@ module.exports = function(context) {
       reportOn(node, node.test && node.test.type === 'CallExpression' && isNodeMatchCall(node.test))
     } catch (e) {
       /* istanbul ignore next */
-      context.report(node, e.toString() + ' ' + e.stack)
+      context.report({node, message: `${e.toString()} ${e.stack}`})
     }
   }
 
@@ -40,7 +40,7 @@ module.exports = function(context) {
         reportOn(node, node.operator === '!' && isNodeMatchCall(node.argument))
       } catch (e) {
         /* istanbul ignore next */
-        context.report(node, e.toString() + ' ' + e.stack)
+        context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     },
     CallExpression: function(node) {
@@ -55,7 +55,7 @@ module.exports = function(context) {
         )
       } catch (e) {
         /* istanbul ignore next */
-        context.report(node, e.toString() + ' ' + e.stack)
+        context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     }
   }

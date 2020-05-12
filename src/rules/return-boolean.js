@@ -17,23 +17,15 @@ module.exports = function(context) {
 
         if (isBodyReturningBoolean(consequent) && isBodyReturningBoolean(alternate)) {
           if (consequent.argument.value === alternate.argument.value) {
-            context.report(
-              node,
-              'this could be simplified to "return {{bool}}"',
-              {bool: context.getSource(alternate.argument)}
-            )
+            context.report({node: node, message: 'this could be simplified to "return {{bool}}"', data: {bool: context.getSource(alternate.argument)}})
           } else {
             const boolPrefix = alternate.argument.value ? '!' : ''
-            context.report(
-              node,
-              `this could be simplified to "return ${boolPrefix}Boolean({{test}})"`,
-              {test: context.getSource(node.test)}
-            )
+            context.report({node: node, message: `this could be simplified to "return ${boolPrefix}Boolean({{test}})"`, data: {test: context.getSource(node.test)}})
           }
         }
       } catch (e) {
         /* istanbul ignore next */
-        context.report(node, e.toString() + ' ' + e.stack)
+        context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     }
   }

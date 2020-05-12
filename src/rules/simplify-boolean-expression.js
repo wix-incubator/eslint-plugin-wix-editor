@@ -36,11 +36,11 @@ module.exports = function(context) {
     FunctionExpression: function(node) {
       try {
         if (isContainedInCondition(node)) {
-          context.report(node, 'Define function outside boolean expression')
+          context.report({node: node, message: 'Define function outside boolean expression'})
         }
       } catch (e) {
         /* istanbul ignore next */
-        context.report(context.getSource(node), e.toString() + ' ' + e.stack)
+        context.report({node: context.getSource(node), message: `${e.toString()} ${e.stack}`})
       }
     }
   }

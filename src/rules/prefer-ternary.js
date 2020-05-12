@@ -24,15 +24,11 @@ module.exports = function(context) {
           isBodyExpressionWithAssignment(alternate) &&
           areEqual(consequent.expression.left, alternate.expression.left)
         ) {
-          context.report(
-            node,
-            'use ternary instead of if-else for assignment of {{left}}',
-            {left: context.getSource(alternate.expression.left)}
-          )
+          context.report({node: node, message: 'use ternary instead of if-else for assignment of {{left}}', data: {left: context.getSource(alternate.expression.left)}})
         }
       } catch (e) {
         /* istanbul ignore next */
-        context.report(node, e.toString() + ' ' + e.stack)
+        context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     }
   }

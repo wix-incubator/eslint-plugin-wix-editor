@@ -9,11 +9,11 @@ module.exports = function(context) {
     UnaryExpression: function(node) {
       try {
         if (!isNot(node.parent) && isNot(node) && isNot(node.argument)) {
-          context.report(node, 'Cast to boolean with `Boolean()`')
+          context.report({node: node, message: 'Cast to boolean with `Boolean()`'})
         }
       } catch (e) {
         /* istanbul ignore next */
-        context.report(node, e.toString() + ' ' + e.stack)
+        context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     }
   }

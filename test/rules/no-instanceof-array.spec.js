@@ -1,9 +1,6 @@
 'use strict'
-
 const rule = require('../../src/rules/no-instanceof-array')
-const RuleTester = require('eslint').RuleTester
-
-const ruleTester = new RuleTester()
+c
 const errorsObject = require('../util/errorsObject')
 
 ruleTester.run('no-instanceof-array', rule, {

@@ -24,11 +24,11 @@ module.exports = function(context) {
     CallExpression: function(node) {
       try {
         if (isCallExpressionOfForEach(node) && isFunctionWithASingleIf(node.arguments[0])) {
-          context.report(node, 'Use Array.filter instead of filtering inside the forEach')
+          context.report({node: node, message: 'Use Array.filter instead of filtering inside the forEach'})
         }
       } catch (e) {
         /* istanbul ignore next */
-        context.report(node, `${e.toString()} ${e.stack}`)
+        context.report({node: node, message: `${e.toString()} ${e.stack}`})
       }
     }
   }
