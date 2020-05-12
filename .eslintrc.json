@@ -1,0 +1,30 @@
+ {
+  "plugins": ["eslint-plugin", "import"],
+  "extends": ["plugin:eslint-plugin/recommended"],
+  "rules": {
+    "sort-imports": 0,
+    "strict": "off",
+    "prefer-const": 2,
+    "prefer-template": 2,
+    "import/no-absolute-path": "error",
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/no-self-import": "error",
+    "import/no-useless-path-segments": "error",
+    "import/no-unused-modules": "error",
+    "import/no-commonjs": "off",
+    "import/no-amd": "error",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "import/no-duplicates": "warn"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "node": true
+  }
+}

@@ -6,9 +6,7 @@ const RuleTester = require('eslint').RuleTester
 const ruleTester = new RuleTester()
 const errorsObject = require('../util/errorsObject')
 
-function message(v) {
-  return 'use ternary instead of if-else for assignment of ' + v
-}
+const message = v => `use ternary instead of if-else for assignment of ${v}`
 
 ruleTester.run('prefer-ternary', rule, {
   valid: [
