@@ -7,9 +7,9 @@
     "lint": "eslint . --cache",
     "test": "npm run lint && npm run unit-test",
     "unit-test": "nyc mocha test/**/*.spec.js --reporter dot",
-    "patch": "npm version patch -m\"update version to %s\" && git push && git push --tags",
-    "minor": "npm version minor -m\"update version to %s\" && git push && git push --tags",
-    "major": "npm version major -m\"update version to %s\" && git push && git push --tags"
+    "patch": "npm version patch -m\"update version to %s\" && git push --follow-tags",
+    "minor": "npm version minor -m\"update version to %s\" && git push --follow-tags",
+    "major": "npm version major -m\"update version to %s\" && git push --follow-tags"
   },
   "devDependencies": {
     "eslint": "^7.0.0",
