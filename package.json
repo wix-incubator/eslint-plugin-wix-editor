@@ -21,7 +21,8 @@
     "nyc": "^15.0.1"
   },
   "dependencies": {
-    "minimatch": "^3.0.4"
+    "minimatch": "^3.0.4",
+    "lodash": "^4.17.15"
   },
   "files": [
     "src"
