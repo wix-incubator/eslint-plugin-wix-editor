@@ -20,27 +20,27 @@ function getRules(dir) {
 
 const rules = getRules(rulesDir)
 
-describe('all rule files should be exported, configured, and documented:', function() {
+describe('all rule files should be exported, configured, and documented:', () => {
   const file = fs.readFileSync('./README.md').toString()
 
-  rules.forEach(function(ruleName) {
-    it(`should export ${ruleName}`, function() {
+  rules.forEach(ruleName => {
+    it(`should export ${ruleName}`, () => {
       assert.equal(plugin.rules[ruleName], require(path.join(rulesDir, ruleName)))
     })
 
-    it(`should configure ${ruleName} off by default`, function() {
+    it(`should configure ${ruleName} off by default`, () => {
       assert.equal(plugin.rulesConfig[ruleName], 0)
     })
 
-    it(`should mention ${ruleName} in the readme 3 times`, function() {
+    it(`should mention ${ruleName} in the readme 3 times`, () => {
       assert.equal(count(ruleName, file), 3)
     })
 
-    it(`should have a markdown file for rule ${ruleName}`, function() {
+    it(`should have a markdown file for rule ${ruleName}`, () => {
       assert.equal(fs.existsSync(path.join('./docs', `${ruleName}.md`)), true)
     })
 
-    it(`should have a test file for rule ${ruleName}`, function() {
+    it(`should have a test file for rule ${ruleName}`, () => {
       assert.equal(fs.existsSync(path.join('./test/rules/', `${ruleName}.spec.js`)), true)
     })
   })

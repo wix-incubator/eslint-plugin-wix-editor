@@ -1,9 +1,9 @@
 'use strict'
 
-module.exports = function(context) {
+module.exports = function (context) {
   function reportOn(node, bool) {
     if (bool) {
-      context.report({node: node, message: 'Use `Regex.test() instead`'})
+      context.report({node, message: 'Use `Regex.test() instead`'})
     }
   }
 
@@ -35,7 +35,7 @@ module.exports = function(context) {
     WhileStatement: checkTestNode,
     ForStatement: checkTestNode,
     ConditionalExpression: checkTestNode,
-    UnaryExpression: function(node) {
+    UnaryExpression(node) {
       try {
         reportOn(node, node.operator === '!' && isNodeMatchCall(node.argument))
       } catch (e) {
@@ -43,7 +43,7 @@ module.exports = function(context) {
         context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     },
-    CallExpression: function(node) {
+    CallExpression(node) {
       try {
         reportOn(node,
           node.callee &&

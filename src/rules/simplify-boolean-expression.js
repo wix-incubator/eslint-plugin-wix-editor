@@ -31,12 +31,12 @@ function isContainedInCondition(node) {
   return false
 }
 
-module.exports = function(context) {
+module.exports = function (context) {
   return {
-    FunctionExpression: function(node) {
+    FunctionExpression(node) {
       try {
         if (isContainedInCondition(node)) {
-          context.report({node: node, message: 'Define function outside boolean expression'})
+          context.report({node, message: 'Define function outside boolean expression'})
         }
       } catch (e) {
         /* istanbul ignore next */

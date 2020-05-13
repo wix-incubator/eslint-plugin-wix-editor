@@ -2,7 +2,7 @@
 
 function getArguments(args) {
   const result = {}
-  args.forEach(function(arg) {
+  args.forEach(arg => {
     if (arg.type === 'ArrayExpression') {
       result.requirements = arg
     } else if (arg.type === 'Literal') {

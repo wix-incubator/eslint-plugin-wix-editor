@@ -19,16 +19,16 @@ function isFunctionWithASingleIf(node) {
     !node.body.body[0].alternate
 }
 
-module.exports = function(context) {
+module.exports = function (context) {
   return {
-    CallExpression: function(node) {
+    CallExpression(node) {
       try {
         if (isCallExpressionOfForEach(node) && isFunctionWithASingleIf(node.arguments[0])) {
-          context.report({node: node, message: 'Use Array.filter instead of filtering inside the forEach'})
+          context.report({node, message: 'Use Array.filter instead of filtering inside the forEach'})
         }
       } catch (e) {
         /* istanbul ignore next */
-        context.report({node: node, message: `${e.toString()} ${e.stack}`})
+        context.report({node, message: `${e.toString()} ${e.stack}`})
       }
     }
   }

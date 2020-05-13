@@ -1,7 +1,7 @@
 'use strict'
 
-function errorsObject() {
-  const argumentsAsArray = Array.prototype.slice.call(arguments)
+function errorsObject(...args) {
+  const argumentsAsArray = Array.prototype.slice(...args)
   return argumentsAsArray.map(arg => ({message: arg}))
 }
 

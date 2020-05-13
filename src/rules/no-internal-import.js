@@ -17,7 +17,7 @@ module.exports = {
   meta: {
     type: 'suggestion', // 'problem',
     docs: {
-      url: docsUrl('no-internal-import'),
+      url: docsUrl('no-internal-import')
     },
     schema: [
       {
@@ -26,27 +26,28 @@ module.exports = {
           allow: {
             type: 'array',
             items: {
-              type: 'string',
-            },
-          },
+              type: 'string'
+            }
+          }
         },
-        additionalProperties: false,
-      },
-    ],
+        additionalProperties: false
+      }
+    ]
   },
 
   create: function noReachingInside(context) {
     const options = context.options[0] || {}
     const allowRegexps = (options.allow || []).map(p => minimatch.makeRe(p))
+    // console.log(options)
 
     // test if reaching to this destination is allowed
     function reachingAllowed(importPath) {
+      // console.log('reachingAllowed', importPath, allowRegexps.some(re => re.test(importPath)))
       return allowRegexps.some(re => re.test(importPath))
     }
 
     function checkImportForReaching(importPath, node) {
-      // if (importPath.)
-      if (isInternalPath(importPath)) {
+      if (isInternalPath(importPath) && !reachingAllowed(importPath)) {
         context.report({node, message: `Reaching to "${importPath}" is not allowed.`})
       }
     }

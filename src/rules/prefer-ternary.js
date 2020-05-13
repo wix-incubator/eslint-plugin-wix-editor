@@ -8,13 +8,13 @@ function isBodyExpressionWithAssignment(body) {
              body.expression.type === 'AssignmentExpression'
 }
 
-module.exports = function(context) {
+module.exports = function (context) {
   function areEqual(a, b) {
     return context.getSource(a) === context.getSource(b)
   }
 
   return {
-    IfStatement: function(node) {
+    IfStatement(node) {
       try {
         const consequent = getIfBody(node.consequent)
         const alternate = getIfBody(node.alternate)
@@ -24,7 +24,7 @@ module.exports = function(context) {
           isBodyExpressionWithAssignment(alternate) &&
           areEqual(consequent.expression.left, alternate.expression.left)
         ) {
-          context.report({node: node, message: 'use ternary instead of if-else for assignment of {{left}}', data: {left: context.getSource(alternate.expression.left)}})
+          context.report({node, message: 'use ternary instead of if-else for assignment of {{left}}', data: {left: context.getSource(alternate.expression.left)}})
         }
       } catch (e) {
         /* istanbul ignore next */

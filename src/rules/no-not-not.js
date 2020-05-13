@@ -4,12 +4,12 @@ function isNot(node) {
   return node.type === 'UnaryExpression' && node.operator === '!'
 }
 
-module.exports = function(context) {
+module.exports = function (context) {
   return {
-    UnaryExpression: function(node) {
+    UnaryExpression(node) {
       try {
         if (!isNot(node.parent) && isNot(node) && isNot(node.argument)) {
-          context.report({node: node, message: 'Cast to boolean with `Boolean()`'})
+          context.report({node, message: 'Cast to boolean with `Boolean()`'})
         }
       } catch (e) {
         /* istanbul ignore next */

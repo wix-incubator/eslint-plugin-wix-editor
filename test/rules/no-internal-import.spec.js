@@ -1,15 +1,31 @@
 'use strict'
 const rule = require('../../src/rules/no-internal-import')
-const {getRuleTester} = require('../util/ruleTester')
+// const {getRuleTester} = require('../util/ruleTester')
 // const ruleTester = getRuleTester()
-const RuleTester = require('eslint').RuleTester
+const {RuleTester} = require('eslint')
 const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2015, sourceType: 'module'}})
 const errorsObject = require('../util/errorsObject')
 
 ruleTester.run('no-instanceof-array', rule, {
   valid: [
     "import x from 'x'",
-    "import {y} from 'x'"
+    "import {y} from 'x'",
+    {
+      code: "import b from 'a/b'",
+      options: [{allow: ['a/b']}]
+    },
+    {
+      code: "import b from 'a/b'",
+      options: [{allow: ['a/*']}]
+    },
+    {
+      code: 'bolt-ds-adapter/test/ds-adapter-testkit',
+      options: [{allow: ['bolt-ds-adapter/test/ds-adapter-testkit']}]
+    },
+    {
+      code: 'bolt-ds-adapter/test/ds-adapter-testkit',
+      options: [{allow: ['bolt-ds-adapter/**']}]
+    }
   ],
   invalid: [{
     code: "import b from 'a/b'",

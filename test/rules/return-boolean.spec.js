@@ -1,7 +1,7 @@
 'use strict'
 
 const rule = require('../../src/rules/return-boolean')
-const RuleTester = require('eslint').RuleTester
+const {RuleTester} = require('eslint')
 
 const ruleTester = new RuleTester()
 const errorsObject = require('../util/errorsObject')

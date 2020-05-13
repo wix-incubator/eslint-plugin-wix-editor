@@ -8,19 +8,19 @@ function isBodyReturningBoolean(body) {
              typeof body.argument.value === 'boolean'
 }
 
-module.exports = function(context) {
+module.exports = function (context) {
   return {
-    IfStatement: function(node) {
+    IfStatement(node) {
       try {
         const consequent = getIfBody(node.consequent)
         const alternate = getIfBody(node.alternate)
 
         if (isBodyReturningBoolean(consequent) && isBodyReturningBoolean(alternate)) {
           if (consequent.argument.value === alternate.argument.value) {
-            context.report({node: node, message: 'this could be simplified to "return {{bool}}"', data: {bool: context.getSource(alternate.argument)}})
+            context.report({node, message: 'this could be simplified to "return {{bool}}"', data: {bool: context.getSource(alternate.argument)}})
           } else {
             const boolPrefix = alternate.argument.value ? '!' : ''
-            context.report({node: node, message: `this could be simplified to "return ${boolPrefix}Boolean({{test}})"`, data: {test: context.getSource(node.test)}})
+            context.report({node, message: `this could be simplified to "return ${boolPrefix}Boolean({{test}})"`, data: {test: context.getSource(node.test)}})
           }
         }
       } catch (e) {
