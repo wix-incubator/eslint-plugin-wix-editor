@@ -1,8 +1,7 @@
 'use strict'
 
 function errorsObject(...args) {
-  const argumentsAsArray = Array.prototype.slice(...args)
-  return argumentsAsArray.map(arg => ({message: arg}))
+  return args.map(message => ({message}))
 }
 
 module.exports = errorsObject

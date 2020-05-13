@@ -6,9 +6,10 @@ const {RuleTester} = require('eslint')
 const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2015, sourceType: 'module'}})
 const errorsObject = require('../util/errorsObject')
 
-ruleTester.run('no-instanceof-array', rule, {
+ruleTester.run('no-internal-import', rule, {
   valid: [
     "import x from 'x'",
+    "const x = require('x')",
     "import {y} from 'x'",
     {
       code: "import b from 'a/b'",
@@ -27,8 +28,13 @@ ruleTester.run('no-instanceof-array', rule, {
       options: [{allow: ['bolt-ds-adapter/**']}]
     }
   ],
-  invalid: [{
-    code: "import b from 'a/b'",
-    errors: errorsObject('Reaching to "a/b" is not allowed.')
-  }]
+  invalid: [
+    {
+      code: 'import b from \'a/b\'',
+      errors: errorsObject('Reaching to "a/b" is not allowed.'),
+    }, {
+      code: 'const b = require(\'a/b\')',
+      errors: errorsObject('Reaching to "a/b" is not allowed.')
+    }
+  ]
 })
