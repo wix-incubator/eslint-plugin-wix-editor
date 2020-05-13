@@ -9,9 +9,11 @@
     "unit-test": "nyc mocha test/**/*.spec.js --reporter dot",
     "patch": "npm version patch -m\"update version to %s\" && git push --follow-tags",
     "minor": "npm version minor -m\"update version to %s\" && git push --follow-tags",
-    "major": "npm version major -m\"update version to %s\" && git push --follow-tags"
+    "major": "npm version major -m\"update version to %s\" && git push --follow-tags",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md && git commit -m'update change log' && git push"
   },
   "devDependencies": {
+    "auto-changelog": "^2.0.0",
     "eslint": "^7.0.0",
     "eslint-plugin-eslint-plugin": "^2.2.1",
     "eslint-plugin-import": "^2.20.2",
