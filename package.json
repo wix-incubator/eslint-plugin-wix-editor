@@ -9,7 +9,9 @@
     "unit-test": "nyc mocha test/**/*.spec.js --reporter dot",
     "patch": "npm version patch -m\"update version to %s\" && git push --follow-tags",
     "minor": "npm version minor -m\"update version to %s\" && git push --follow-tags",
-    "major": "npm version major -m\"update version to %s\" && git push --follow-tags"
+    "major": "npm version major -m\"update version to %s\" && git push --follow-tags",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "eslint": "^7.0.0",
@@ -22,7 +24,8 @@
   },
   "dependencies": {
     "minimatch": "^3.0.4",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "snyk": "^1.320.2"
   },
   "files": [
     "src"
@@ -42,5 +45,6 @@
     "eslint",
     "eslint-plugin"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
