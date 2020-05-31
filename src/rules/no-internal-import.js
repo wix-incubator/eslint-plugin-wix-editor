@@ -47,7 +47,7 @@ module.exports = {
     }
 
     function checkImportForReaching(importPath, node) {
-      if (isInternalPath(importPath) && !reachingAllowed(importPath)) {
+      if (node.parent.importKind !== 'type' && isInternalPath(importPath) && !reachingAllowed(importPath)) {
         context.report({node, message: `Reaching to "${importPath}" is not allowed.`})
       }
     }
