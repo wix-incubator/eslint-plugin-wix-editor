@@ -23,12 +23,13 @@ const errorsObject = require('../util/errorsObject')
 
 ruleTester.run('no-internal-import', rule, {
   valid: [
-    "import type {T} from 'x/b/types'"
+    "import type {T} from 'x/b/types'",
+    "import type {ViewerManager} from 'document-manager-core/src/types'"
   ],
   invalid: [
     {
       code: 'import b from \'a/b\'',
-      errors: errorsObject('Reaching to "a/b" is not allowed.'),
+      errors: errorsObject('Reaching to "a/b" is not allowed.')
     }, {
       code: 'const b = require(\'a/b\')',
       errors: errorsObject('Reaching to "a/b" is not allowed.')
