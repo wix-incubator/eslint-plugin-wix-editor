@@ -13,7 +13,7 @@
     "changelog": "auto-changelog -p && git add CHANGELOG.md && git commit -m'update change log' && git push"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^3.0.2",
+    "@typescript-eslint/parser": "^4.3.0",
     "auto-changelog": "^2.0.0",
     "eslint": "^7.0.0",
     "eslint-config-wix-editor": "^8.1.0",
